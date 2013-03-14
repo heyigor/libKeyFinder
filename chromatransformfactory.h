@@ -22,7 +22,7 @@
 #ifndef CHROMATRANSFORMFACTORY_H
 #define CHROMATRANSFORMFACTORY_H
 
-#include <boost/thread/mutex.hpp>
+#include <mutex>
 #include <vector>
 #include "chromatransform.h"
 #include "parameters.h"
@@ -41,7 +41,7 @@ namespace KeyFinder{
   private:
     class ChromaTransformWrapper;
     std::vector<ChromaTransformWrapper*> chromaTransforms;
-    boost::mutex chromaTransformFactoryMutex;
+    std::mutex chromaTransformFactoryMutex;
   };
 
   // Keeps a reference to a spectrum analyser with distinguishing information

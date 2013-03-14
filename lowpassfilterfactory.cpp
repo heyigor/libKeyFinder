@@ -69,7 +69,7 @@ namespace KeyFinder{
   LowPassFilter* LowPassFilterFactory::getLowPassFilter(
     unsigned int cc, unsigned int fr, float cf, unsigned int fs
   ){
-    boost::mutex::scoped_lock lock(LowPassFilterFactoryMutex);
+    std::lock_guard<std::mutex> lock(LowPassFilterFactoryMutex);
     for (unsigned int i=0; i<filters.size(); i++){
       LowPassFilterWrapper* wrapper = filters[i];
       if(

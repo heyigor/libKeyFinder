@@ -24,7 +24,6 @@
 
 #include <cmath>
 #include <fftw3.h>
-#include <boost/math/special_functions/fpclassify.hpp>
 #include "exception.h"
 
 namespace KeyFinder{

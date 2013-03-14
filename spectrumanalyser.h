@@ -22,7 +22,7 @@
 #ifndef SPECTRUMANALYSER_H
 #define SPECTRUMANALYSER_H
 
-#include <boost/thread/mutex.hpp>
+#include <mutex>
 #include "chromagram.h"
 #include "audiodata.h"
 #include "fftadapter.h"
