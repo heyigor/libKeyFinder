@@ -67,16 +67,19 @@ build: $(TARGET)
 	@echo done!
 
 $(TARGET): $(OBJ)
-	${AR} rcs ${TARGET} ${OBJ}
+	@echo link $(TARGET)
+	@${AR} rcs ${TARGET} ${OBJ}
 
 # Rules for compiling source files to object files
 $(OBJ_DIR)%.o : %.cpp
+	@echo compile $<
 	@mkdir -p $(OBJ_DIR)
-	${CXX} -c ${CXXFLAGS} $< -o $@
+	@${CXX} -c ${CXXFLAGS} $< -o $@
 
 $(OBJ_DIR)%.o : %.c
+	@echo compile $<
 	@mkdir -p $(OBJ_DIR)
-	${CC} -c ${CFLAGS} $< -o $@
+	@${CC} -c ${CFLAGS} $< -o $@
 
 clean:
 	@rm -f $(TARGET)
